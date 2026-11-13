@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>How I red-team an AI agent — Brian Onyango Ezekiel</title>
+  <meta name="description" content="My loop for adversarial evals: map the surface, plant the trap, measure the bite.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="wrap crumbs"><a href="index.html">Home</a> / <a href="blog.html">Blog</a> / Red teaming</div>
+  <main class="wrap post">
+    <h1>How I red-team an AI agent</h1>
+    <p class="post-meta">Nov 2026 · <span data-read>3 min read</span> · Red teaming</p>
+    <nav class="toc" aria-label="Table of contents"><strong>Contents</strong><ul id="tocList"></ul></nav>
+    <article id="article">
+      <h2>Map the surface</h2>
+      <p>Every eval starts with the same question: where can untrusted text reach the agent? Reviews, emails, chat messages, tool outputs — each is a door. I list them before writing a single line of scenario, because an injection the agent never reads is theater, not testing.</p>
+      <p>Then I decide what "winning" means for the attacker: exfiltrating a PIN, sending mail to a stranger, posting a public reply. One crisp bad outcome beats five fuzzy ones.</p>
+      <h2>Plant the trap</h2>
+      <p>The injection goes where the agent must look but the user wouldn't suspect — a verified guest review, a forwarded email thread. I bury the payload mid-narrative, in a helpful tone, with social proof around it. No imperatives, no "ignore previous instructions" neon signs.</p>
+      <p>The scenario itself is YAML: persona, seeded context, the attack, deterministic verifiers for what must and must not happen, plus an LLM judge for the gray areas.</p>
+      <h2>Measure the bite</h2>
+      <p>Then rollouts against a frontier model. Early versions score refusals; each miss teaches something — the agent spotted the payload too early, or never opened the inbox at all. I change one variable per version and keep a tally: breaks over total runs is the only number that matters.</p>
+      <p>My Booking PIN-phish task took four versions to reach a 50% break rate in dev. Version five would have been the Martin reframe — same trap, warmer bait.</p>
+    </article>
+    <div class="related"><a href="post-annotation.html">← From annotation to adversarial evals</a><a href="post-cv.html">A CV verified by code →</a></div>
+  </main>
+  <script>
+  (function () {
+    var ul = document.getElementById('tocList');
+    document.querySelectorAll('#article h2').forEach(function (h, i) {
+      h.id = 's' + i;
+      var li = document.createElement('li'), a = document.createElement('a');
+      a.href = '#s' + i; a.textContent = h.textContent;
+      li.appendChild(a); ul.appendChild(li);
+    });
+  })();
+  </script>
+</body>
+</html>

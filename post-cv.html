@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>A CV verified by code, not eyeballs — Brian Onyango Ezekiel</title>
+  <meta name="description" content="Every text item in my CV PDF is machine-checked to sit inside the page frame.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="wrap crumbs"><a href="index.html">Home</a> / <a href="blog.html">Blog</a> / Craft</div>
+  <main class="wrap post">
+    <h1>A CV verified by code, not eyeballs</h1>
+    <p class="post-meta">Nov 2026 · <span data-read>2 min read</span> · Craft</p>
+    <nav class="toc" aria-label="Table of contents"><strong>Contents</strong><ul id="tocList"></ul></nav>
+    <article id="article">
+      <h2>The problem with looking</h2>
+      <p>My revamped CV looked perfect — until page two, where the skills and referees sat half outside the frame. Eyeballs miss this; geometry doesn't. So the rebuild pipeline ends with a checker, not a glance.</p>
+      <h2>The checker</h2>
+      <p>A small Node script reads the PDF's text items and asserts each one sits inside the printed border, with key strings present on the right pages:</p>
+      <pre><code id="code1">const ok = x0 >= BX0 - TOL && x1 <= BX1 + TOL
+        && y0 >= BY0 - TOL && y1 <= BY1 + TOL;
+if (!ok) fail(`OUT-OF-FRAME: ${str}`);</code><button class="mini-btn" data-code="code1">Copy</button></pre>
+      <p>Same idea as testing software: the artifact proves itself on every build.</p>
+      <h2>Steal this habit</h2>
+      <p>Anything you deliver repeatedly deserves a machine check — resumes, reports, invoices. Write the assertion once; never ship a silent regression again.</p>
+    </article>
+    <div class="related"><a href="post-redteam.html">← How I red-team an AI agent</a><a href="post-annotation.html">From annotation to adversarial evals →</a></div>
+  </main>
+  <script>
+  (function () {
+    var ul = document.getElementById('tocList');
+    document.querySelectorAll('#article h2').forEach(function (h, i) {
+      h.id = 's' + i;
+      var li = document.createElement('li'), a = document.createElement('a');
+      a.href = '#s' + i; a.textContent = h.textContent;
+      li.appendChild(a); ul.appendChild(li);
+    });
+    document.querySelectorAll('[data-code]').forEach(function (b) {
+      b.addEventListener('click', function () {
+        var t = document.getElementById(b.dataset.code).textContent;
+        if (navigator.clipboard) navigator.clipboard.writeText(t);
+        b.textContent = 'Copied';
+        setTimeout(function () { b.textContent = 'Copy'; }, 1500);
+      });
+    });
+  })();
+  </script>
+</body>
+</html>

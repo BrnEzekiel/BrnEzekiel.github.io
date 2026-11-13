@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Blog — Brian Onyango Ezekiel</title>
+  <meta name="description" content="Notes on red teaming, annotation QA, and craft.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="wrap crumbs"><a href="index.html">Home</a> / Blog</div>
+  <main class="wrap post" style="max-width:900px">
+    <h1>Blog</h1>
+    <p class="post-meta">Notes from the workbench.</p>
+    <div class="spot" style="margin-bottom:28px">
+      <div><p class="card-tag">Featured</p><h3>How I red-team an AI agent</h3><p class="muted">My loop: map the surface, plant the trap, measure the bite.</p></div>
+      <a class="btn small" href="post-redteam.html">Read · 3 min</a>
+    </div>
+    <div class="tech-row" role="group" aria-label="Filter by tag">
+      <button class="chip-btn active" data-ptag="all">All</button>
+      <button class="chip-btn" data-ptag="red">Red teaming</button>
+      <button class="chip-btn" data-ptag="anno">Annotation</button>
+      <button class="chip-btn" data-ptag="craft">Craft</button>
+    </div>
+    <div class="cards" id="postCards" style="margin-top:18px">
+      <article class="card" data-ptag="red"><div class="card-body"><p class="card-tag">Red teaming · 3 min</p><h3>How I red-team an AI agent</h3><p>My loop: map the surface, plant the trap, measure the bite.</p><a class="text-btn" href="post-redteam.html">Read post</a></div></article>
+      <article class="card" data-ptag="anno"><div class="card-body"><p class="card-tag">Annotation · 3 min</p><h3>From annotation to adversarial evals</h3><p>What labeling thousands of outputs taught me about breaking models.</p><a class="text-btn" href="post-annotation.html">Read post</a></div></article>
+      <article class="card" data-ptag="craft"><div class="card-body"><p class="card-tag">Craft · 2 min</p><h3>A CV verified by code, not eyeballs</h3><p>Every text item machine-checked inside the page frame.</p><a class="text-btn" href="post-cv.html">Read post</a></div></article>
+    </div>
+  </main>
+  <script>
+  document.querySelectorAll('[data-ptag].chip-btn').forEach(function (b) {
+    b.addEventListener('click', function () {
+      document.querySelectorAll('[data-ptag].chip-btn').forEach(function (x) { x.classList.remove('active'); });
+      b.classList.add('active');
+      var f = b.dataset.ptag;
+      document.querySelectorAll('#postCards .card').forEach(function (c) {
+        c.classList.toggle('hidden', f !== 'all' && c.dataset.ptag !== f);
+      });
+    });
+  });
+  </script>
+</body>
+</html>

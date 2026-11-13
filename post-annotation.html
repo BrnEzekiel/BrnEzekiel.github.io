@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>From annotation to adversarial evals — Brian Onyango Ezekiel</title>
+  <meta name="description" content="What labeling thousands of AI outputs taught me about breaking models.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="wrap crumbs"><a href="index.html">Home</a> / <a href="blog.html">Blog</a> / Annotation</div>
+  <main class="wrap post">
+    <h1>From annotation to adversarial evals</h1>
+    <p class="post-meta">Nov 2026 · <span data-read>3 min read</span> · Annotation</p>
+    <nav class="toc" aria-label="Table of contents"><strong>Contents</strong><ul id="tocList"></ul></nav>
+    <article id="article">
+      <h2>The rubric is the product</h2>
+      <p>Annotation taught me that model quality lives or dies in the labeling rubric. Vague guidelines produce vague data: one annotator's "helpful" is another's "harmful." The fix is always the same — concrete examples, named edge cases, and a decision log for the weird ones.</p>
+      <p>I carry that into red teaming. An eval without crisp verifiers is just vibes; every must and must-not gets a deterministic check where one is possible.</p>
+      <h2>Volume builds instinct</h2>
+      <p>After thousands of TTS and chat judgments across multilingual datasets, you develop a feel for where models wobble: long contexts, conflicting instructions, polite-sounding traps. That instinct is exactly what makes a good adversarial task — I plant attacks where I know the footing is loose.</p>
+      <h2>Both sides of the loop</h2>
+      <p>Annotators feed models; red teamers audit them. Doing both at once — RWS by day, Alice red teaming alongside — means every labeling session sharpens my attacks and every attack sharpens my labels. If you do one, learn the other.</p>
+    </article>
+    <div class="related"><a href="post-redteam.html">← How I red-team an AI agent</a><a href="post-cv.html">A CV verified by code →</a></div>
+  </main>
+  <script>
+  (function () {
+    var ul = document.getElementById('tocList');
+    document.querySelectorAll('#article h2').forEach(function (h, i) {
+      h.id = 's' + i;
+      var li = document.createElement('li'), a = document.createElement('a');
+      a.href = '#s' + i; a.textContent = h.textContent;
+      li.appendChild(a); ul.appendChild(li);
+    });
+  })();
+  </script>
+</body>
+</html>
