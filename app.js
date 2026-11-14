@@ -452,18 +452,6 @@
     }
   });
 
-  // Experience filter
-  $all('.xp-filter .chip-btn').forEach(function (btn) {
-    btn.addEventListener('click', function () {
-      $all('.xp-filter .chip-btn').forEach(function (b) { b.classList.remove('active'); });
-      btn.classList.add('active');
-      var f = btn.dataset.xp;
-      $all('.timeline li').forEach(function (li) {
-        li.classList.toggle('dim', f !== 'all' && (li.dataset.sk || '').split(' ').indexOf(f) < 0);
-      });
-    });
-  });
-
   // Animated stat counters
   var counters = $all('[data-count]');
   function countUp(el) {

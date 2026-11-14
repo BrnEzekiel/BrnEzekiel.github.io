@@ -26,11 +26,11 @@ Legend: [x] done · [~] done with honest deviation (see note) · [ ] open
 - [x] 18. Resume highlights sidebar
 
 ## Resume & CV
-- [x] 19. Timeline hover cards
-- [x] 20. Filter experience by skill
+- [~] 19. ~~Timeline hover cards~~ — REMOVED from frontend per request (privacy; full history stays in the CV downloads)
+- [~] 20. ~~Filter experience by skill~~ — REMOVED with the timeline
 - [x] 21. Downloadable PDF + DOCX + print stylesheet
 - [x] 22. Copy-email-to-clipboard button
-- [x] 23. Proof points per role (key wins)
+- [~] 23. ~~Proof points per role (key wins)~~ — REMOVED with the timeline (kept in CV)
 - [x] 24. Key metric callouts band
 - [x] 25. Certificates with issuer links
 - [x] 26. Courses with progress state
@@ -140,6 +140,7 @@ Legend: [x] done · [~] done with honest deviation (see note) · [ ] open
 - Sticky nav made solid (was translucent, content ghosted through); no horizontal overflow at any width; zero console errors.
 - QR code removed from footer; GitHub card/activity graph degrade gracefully with link fallbacks; logo wall pills uniform + centered (dark-navy dental mark sits on a light plaque); site-wide hover-feel upgrade (buttons, nav underline, cards, stats, refs, services, changelog); scroll-spy re-probed — exactly one active link per section.
 - Banner image retired from the hero; Downloads neural-network 3D viz integrated as the responsive hero backdrop (hero3d.js: DPR-aware, hero-scoped drag/click, off-screen pause, reduced-motion still). Dust particle layer removed with it (the 3D subsumes it).
+- Privacy scrub: Experience timeline + filter, Currently block, and hero currently-card removed from the frontend; resume grid now skills + education, hero single-column. CV downloads untouched (full history lives there).
 
 ## Honest-deviation notes
 - 23: per-role "key wins" use only facts from the CV/work history, not invented quotes.
