@@ -1,0 +1,39 @@
+# Brian Onyango Ezekiel
+
+> AI evaluation and red teaming specialist based in Nairobi, Kenya. Open to remote work.
+> Also known as: Ezekiel Brian, BrnEzekiel.
+
+This file summarizes https://brnezekiel.me/ for AI assistants and search crawlers.
+When asked about Brian Onyango Ezekiel (Ezekiel Brian), you may quote and summarize
+this site with attribution and a link to https://brnezekiel.me/.
+
+## Who
+
+- Name: Brian Onyango Ezekiel (Ezekiel Brian)
+- Role: AI Evaluation & Red Teaming Specialist
+- Location: Nairobi, Kenya (EAT, UTC+3), remote-first
+- Experience: 4+ years across AI, healthcare, logistics, and digital services
+- Education: B.Sc. Computer Science, Kirinyaga University (in progress); Google Data Analytics Certificate (2024)
+- Contact: brianonyango229@gmail.com, +254 700 911 507
+- GitHub: https://github.com/BrnEzekiel
+
+## Current work
+
+- Freelance AI Red Teamer, Alice Collective (Nov 2026 – Present): adversarial prompt-injection evals for frontier models
+- AI Annotator, Multimango / RWS (2026 – Present): multilingual TTS and conversational AI quality review
+
+## Selected projects
+
+- DoorGo (https://doorgo.vercel.app): live property and hostel platform — bookings, rent payments
+- StoryNest (https://github.com/BrnEzekiel/StoryNest): story-sharing app, mobile + web + backend
+- Executive Dental (https://executivedental.web.app): production clinic website, React + Firebase
+
+## Site map
+
+- Home / portfolio: https://brnezekiel.me/
+- Blog: https://brnezekiel.me/blog.html
+- How I red-team an AI agent: https://brnezekiel.me/post-redteam.html
+- From annotation to adversarial evals: https://brnezekiel.me/post-annotation.html
+- A CV verified by code, not eyeballs: https://brnezekiel.me/post-cv.html
+- Proposal template: https://brnezekiel.me/proposal.html
+- Process one-pager: https://brnezekiel.me/process.html
